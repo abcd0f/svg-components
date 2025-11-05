@@ -1,0 +1,302 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>svg动画</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .btn {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        padding: 5px;
+      }
+
+      .wrap-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .wrap-container.animation .wrap-img {
+        animation: imgScale 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+      .wrap-container.animation .wrap-path {
+        transform-origin: center center;
+        animation: pathWrap 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+      .wrap-container.animation .svg-center {
+        stroke-width: 0;
+        animation: center 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+      .wrap-container.animation .path-line {
+        animation: pathLine 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+      .wrap-container.animation .citys {
+        animation: text 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+
+      .wrap-img {
+        width: 100%;
+        height: 100%;
+        background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544072849728&di=ef4374af981cf1b4fa52dc4dce5c54e0&imgtype=0&src=http%3A%2F%2Fres.cngoldres.com%2Fupload%2Fusercenter%2F2018%2F0815%2F8491eefa4ec74270f51da3fde0032dca.jpg');
+        background-size: cover;
+        background-position: center center;
+        transform-origin: center center;
+        transform: scale(1.4);
+      }
+
+      @keyframes imgScale {
+        0% {
+          transform: scale(1.4);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      @keyframes pathWrap {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(90deg);
+        }
+      }
+      .svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2800px;
+        height: 2800px;
+        transform: translate(-50%, -50%);
+      }
+
+      .svg-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        overflow: hidden;
+        transform: translate(-50%, -50%);
+        stroke-width: 200;
+      }
+
+      @keyframes center {
+        0% {
+          stroke-width: 200;
+        }
+        100% {
+          stroke-width: 0;
+        }
+      }
+      .path-1 {
+        stroke-dasharray: 504 504;
+      }
+
+      @keyframes path1 {
+        0% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: -504;
+        }
+      }
+      .path-2 {
+        stroke-dasharray: 882 882;
+      }
+
+      @keyframes path2 {
+        0% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: 882;
+        }
+      }
+      .path-3 {
+        stroke-dasharray: 1260 1260;
+      }
+
+      @keyframes path3 {
+        0% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: -1260;
+        }
+      }
+      .path-4 {
+        stroke-dasharray: 1638 1638;
+      }
+
+      @keyframes path4 {
+        0% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: 1638;
+        }
+      }
+      .path-5 {
+        stroke-dasharray: 2016 2016;
+      }
+
+      @keyframes path5 {
+        0% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: -2016;
+        }
+      }
+      .path-6 {
+        stroke-dasharray: 2394 2394;
+      }
+
+      @keyframes path6 {
+        0% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: 2394;
+        }
+      }
+      .path-7 {
+        stroke-dasharray: 2772 2772;
+      }
+
+      @keyframes path7 {
+        0% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: -2772;
+        }
+      }
+      .wrap-container.animation .path-1 {
+        animation: path1 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+      .wrap-container.animation .path-2 {
+        animation: path2 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+      .wrap-container.animation .path-3 {
+        animation: path3 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+      .wrap-container.animation .path-4 {
+        animation: path4 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+      .wrap-container.animation .path-5 {
+        animation: path5 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+      .wrap-container.animation .path-6 {
+        animation: path6 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+      .wrap-container.animation .path-7 {
+        animation: path7 1.5s cubic-bezier(0.77, 0, 0.175, 1) both;
+      }
+
+      .path-line {
+        stroke-dasharray: 756 756;
+        transform-origin: center center;
+        stroke-dashoffset: 756;
+      }
+
+      @keyframes pathLine {
+        0% {
+          transform: rotate(-50deg);
+          opacity: 0;
+          stroke-dashoffset: 756;
+        }
+        50% {
+          opacity: 1;
+        }
+        70% {
+          opacity: 1;
+        }
+        100% {
+          transform: rotate(0);
+          stroke-dashoffset: 0;
+          opacity: 0;
+        }
+      }
+      .citys {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        height: 80px;
+        line-height: 1;
+        text-align: center;
+        color: #fff;
+        font-size: 80px;
+        margin-top: -40px;
+        margin-left: -100px;
+        font-family: 'Permanent Marker', cursive;
+      }
+
+      @keyframes text {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap-container animation" id="container">
+      <!-- 背景图  -->
+      <div class="wrap-img"></div>
+      <!-- svg环状部分  -->
+      <svg class="svg" viewBox="0 0 1000 1000">
+        <g class="wrap-path" fill="none" stroke="#1e1e1e" stroke-width="60">
+          <path class="path-6" d="M 120 500 A 50 50 1 0 1 880 500 A 50 50 1 0 1 120 500" />
+          <path class="path-5" d="M 180 500 A 50 50 1 0 1 820 500 A 50 50 1 0 1 180 500" />
+          <path class="path-4" d="M 240 500 A 50 50 1 0 1 760 500 A 50 50 1 0 1 240 500" />
+          <path class="path-3" d="M 300 500 A 50 50 1 0 1 700 500 A 50 50 1 0 1 300 500" />
+          <path class="path-2" d="M 360 500 A 50 50 1 0 1 640 500 A 50 50 1 0 1 360 500" />
+          <path class="path-1" d="M 420 500 A 50 50 1 0 1 580 500 A 50 50 1 0 1 420 500" />
+          <path
+            class="path-line"
+            d="M 380 500 A 50 50 1 0 1 620 500 A 50 50 1 0 1 380 500"
+            stroke-width="0.5"
+            stroke="#fff"
+          />
+        </g>
+      </svg>
+      <!-- svg中间圆心部分  -->
+      <svg class="svg-center" viewBox="0 0 200 200">
+        <path class="path-circle" d="M 0 100 A 50 50 1 0 1 200 100 A 50 50 1 0 1 0 100" stroke="#1e1e1e" fill="none" />
+      </svg>
+      <div class="citys">citys</div>
+    </div>
+
+    <button class="btn" onclick="btnClick()">开始动画</button>
+    <script>
+      function btnClick() {
+        var $container = document.getElementById('container');
+        $container.classList.remove('animation');
+
+        setTimeout(() => {
+          $container.classList.add('animation');
+        }, 200);
+      }
+    </script>
+  </body>
+</html>
